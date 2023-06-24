@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class BallController : MonoBehaviour
@@ -9,6 +10,7 @@ public class BallController : MonoBehaviour
     public float ballspeed = 5f;
     public Vector3 vel;
     public bool isPlaying = false;
+    public ScoreManager scoreManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,10 +44,12 @@ public class BallController : MonoBehaviour
     {
         if (transform.position.x > 0)
         {
+            scoreManager.IncrementLeftPlayerScore();
             print("Gracz lewy punkt");
         }
         if (transform.position.x < 0)
         {
+            scoreManager.IncrementRightPlayerScore();
             print("Gracz prawy punkt");
         }
         ResetBallInRandomDirection();
