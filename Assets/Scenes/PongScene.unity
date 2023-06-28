@@ -244,10 +244,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2d: {fileID: 0}
-  ballspeed: 5
+  ballspeed: 7
   vel: {x: 0, y: 0, z: 0}
   isPlaying: 0
   scoreManager: {fileID: 654319957}
+  spinForce: 1
+  multiplier: 0
+  mnoznikmocy: 100
 --- !u!61 &26513975
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -899,8 +902,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  UpKey: 273
-  DownKey: 274
+  upKey: 273
+  downKey: 274
 --- !u!212 &1081392214
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1210,8 +1213,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  UpKey: 119
-  DownKey: 115
+  upKey: 119
+  downKey: 115
 --- !u!212 &1777130025
 SpriteRenderer:
   m_ObjectHideFlags: 0

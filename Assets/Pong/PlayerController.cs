@@ -5,8 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
-    public KeyCode UpKey = KeyCode.W;
-    public KeyCode DownKey = KeyCode.S;
+    public KeyCode upKey = KeyCode.W;
+    public KeyCode downKey = KeyCode.S;
+    public bool IsUpKeyPressed() => Input.GetKey(upKey);
+    public bool IsDownKeyPressed() => Input.GetKey(downKey);
     // Start is called before the first frame update
     void Start()
     {
@@ -16,16 +18,16 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
 
-        if (Input.GetKey(UpKey) && transform.position.y < 3.5f)
+
+        if (IsUpKeyPressed() && transform.position.y < 3.5f)
         {
             transform.position += Vector3.up * Time.deltaTime * speed;
         }
 
-        if (Input.GetKey(DownKey) && transform.position.y > -3.5f)
+        if (IsDownKeyPressed() && transform.position.y > -3.5f)
         {
-            transform.position -= Vector3.up * Time.deltaTime * speed;
+            transform.position += Vector3.down * Time.deltaTime * speed;
         }
     }
 }
